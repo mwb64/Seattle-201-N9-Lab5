@@ -18,7 +18,7 @@ function sum(a,b){ //eslint-disable-line
 }
 
 // TODO: Here is the test for sum(); uncomment it to run it
-// testSum(4, 7);
+testSum(4, 7);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -56,11 +56,23 @@ Test this function by hand in the console to get it working, and when you think 
 // TODO: Write your code here
 
 function sumAndMultiply(a,b,c){ //eslint-disable-line
-
-}
-
+  var sum2 = sum(a,b)[0];
+  console.log(sum2);
+  var sum3 = sum(sum2,c)[0];
+  console.log(sum3);
+  var mp1 = multiply(a,b)[0];
+  console.log(mp1);
+  var mp2 = multiply(mp1,c)[0];
+  console.log(mp2);
+  var sumOf = a + ' and ' + b + ' and ' + c + ' sum to ' + sum3 + '.';
+  console.log(sumOf);
+  var multiOf = 'The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + mp2 + '.';
+  console.log(multiOf);
+  return [sum3,mp2,sumOf,multiOf];
+};
+console.log(testSumAndMultiply(4,7,5));
 // TODO: Here is the test for sumAndMultiply(); uncomment it to run it
-// testSumAndMultiply(4,7,5);
+testSumAndMultiply(4,7,5);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -78,11 +90,13 @@ Test this function by hand in the console to get it working, and when you think 
 var testArray = [2,3,4]; //eslint-disable-line
 
 function sumArray(testArray){ //eslint-disable-line
-
-}
-
+  var firstSum = sum(testArray[1],testArray[2]);
+  var arraySum = sum(testArray[0],firstSum[0])[0];
+  var state = testArray + ' was passed in as an array of numbers, and ' + arraySum + ' is their sum.';
+  return [arraySum,state];
+};
 // TODO: Here is the test for sumArray(); uncomment it to run it
-// testSumArray(testArray);
+testSumArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
